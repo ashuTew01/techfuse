@@ -1,0 +1,119 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/hero-image.png" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Recipe Blog">
+    </div>
+
+    <div class="col-12 col-lg-6">
+
+        <h1 class="display-5 fw-bold mb-3">
+           The Only Place to Visit<br> For Latest Gadgets And Tech News.
+        </h1>
+        <p class="lead">
+            Tired of endless browsing and searching through multiple channels? Welcome to our tech sanctuary, where we curate the latest news on phones and AI, providing you with a one-stop oasis for all your tech cravings.        </p>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/articles/explore" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest Articles</a>
+            <a href="/submit/articles/public" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Add an Article</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Categories start -->
+
+<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 py-4">
+
+    <% if(categories != "") { %>
+        <% categories.forEach(function(category, index) { %>
+            <a href="categories/<%- category.name %>" class="col text-center category__link">
+                <div class="category__img shadow">
+                    <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+                </div>
+                <div class="pt-1"><%- category.name %></div>
+            </a>
+        <% }) %>
+    <% } %>
+
+    <a href="/categories/all" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="img/view-all.jpg" alt="View All Categories" loading="lazy">
+        </div>
+        <div class="pt-1">All Categories</div>
+    </a>
+
+</div>
+<!-- categories end -->
+
+
+<!-- latest start -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Recipes</h2>
+        <a href="/articles/explore" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <a href="/articles/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/chocolate-banoffe-whoopie-pies.jpg" alt="Chocolate Banoffe" loading="lazy">
+            </div>
+            <div class="pt-1">Chocolate Banoffe</div>
+        </a>
+
+        <a href="/articles/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/chocolate-banoffe-whoopie-pies.jpg" alt="Chocolate Banoffe" loading="lazy">
+            </div>
+            <div class="pt-1">Chocolate Banoffe</div>
+        </a>
+
+        <a href="/articles/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/chocolate-banoffe-whoopie-pies.jpg" alt="Chocolate Banoffe" loading="lazy">
+            </div>
+            <div class="pt-1">Chocolate Banoffe</div>
+        </a>
+
+        <a href="/articles/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/chocolate-banoffe-whoopie-pies.jpg" alt="Chocolate Banoffe" loading="lazy">
+            </div>
+            <div class="pt-1">Chocolate Banoffe</div>
+        </a>
+
+        <a href="/articles/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="img/chocolate-banoffe-whoopie-pies.jpg" alt="Chocolate Banoffe" loading="lazy">
+            </div>
+            <div class="pt-1">Chocolate Banoffe</div>
+        </a>
+    </div>
+
+</section>
+
+
+<!-- latest end -->
+
+
+<!-- submit start -->
+
+<section class="px-4 py-5 my-5 text-center">
+    <img src="/img/publish-recipe.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe today!" width="566" height="208" loading="lazy">
+    <h1 class="display-5 fw-bold">Publish your Article Today</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+            Write an Article about any Tech!
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit/articles/public" class="btn btn-primary btn-dark bt-lg">
+                Write Article
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<!-- submit end -->
+
+
