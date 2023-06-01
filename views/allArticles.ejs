@@ -65,12 +65,12 @@
         <% articles.forEach(function(article) { %>
           <div class="col-md-4">
             <div class="card">
-            <a href="articles/<%= article._id %>" style="text-decoration: none;"><img src="/uploads/<%= article.image %>" class="card-img-top" alt="Article Image"></a>
-              <a href="articles/<%= article._id %>" style="text-decoration: none;"><div class="card-body">
+            <a href="/articles/<%= article._id %>" style="text-decoration: none;"><img src="/uploads/<%= article.image %>" class="card-img-top" alt="Article Image"></a>
+              <a href="/articles/<%= article._id %>" style="text-decoration: none;"><div class="card-body">
                 <h5 class="card-title"><%= article.title %></h5>
                 <p class="card-text"><%= article.content.substring(0, 100) %>...</p>
                 <div class="d-flex justify-content-start">
-                  <a href="articles/<%= article._id %>" class="btn btn-read-more btn-sm">Read More</a>
+                  <a href="/articles/<%= article._id %>" class="btn btn-read-more btn-sm">Read More</a>
                 </div>
               </div></a>
             </div>

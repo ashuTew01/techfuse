@@ -1,10 +1,9 @@
 require("../models/database");
 const Category = require("../models/Category");
 const Article = require("../models/Article");
+
 // GET "/"
 //Homepage
-
-
 exports.homepage = async(req, res) => {
     try {
         const limNum = 3;
@@ -82,7 +81,6 @@ exports.articlePage = async(req, res) => {
     }
 }
 
-
 //GET "/category/:id"
 //Category Page
 exports.categoryPage = async(req, res) => {
@@ -96,8 +94,6 @@ exports.categoryPage = async(req, res) => {
     }
 }
 
-
-
 //POST "/search"
 //Search
 exports.searchArticle = async(req, res) => {
@@ -110,4 +106,61 @@ exports.searchArticle = async(req, res) => {
     } catch (error) {
         res.status(500).send({message: error.message || "Error Occured."});
     }
+}
+
+//GET "/submit/articles/public"
+//Submit Article Public
+exports.submitArticlePublic = async(req, res) => {
+    const infoErrorsObj = req.flash("infoErrors");
+    const infoSubmitObj = req.flash("infoSubmit");
+    const categories = await Category.find({}).limit(300);
+    res.render("submitArticlePublic", {title: "TechFuse - Submit Article", categories, infoErrorsObj, infoSubmitObj});
+}
+
+//POST "/submit/articles/public"
+//Submit Article Public POST
+exports.submitArticlePublicPOST = async(req, res) => {
+
+    try {
+
+        let imageUploadFile;
+        let uploadPath;
+        let newImageName;
+
+        if(!req.files || Object.keys(req.files).length === 0){
+            console.log("No Files were Uploaded");
+        } else {
+            imageUploadFile = req.files.image;
+            newImageName = Date.now() + imageUploadFile.name;
+            uploadPath = require("path").resolve("./") + "/public/uploads/" + newImageName;
+
+            imageUploadFile.mv(uploadPath, function(err){
+                if(err) return res.status(500).send(err);
+            })
+        }
+
+        const catID = req.body.categoryID;
+        const category = await Category.findById(catID);
+
+        const newArticle = new Article({
+            "type": "Public",
+            "title": req.body.title,
+            "content": req.body.content,
+            "catName": category.name,
+            "categoryID": category._id,
+            "image": newImageName
+
+        })
+        await newArticle.save();
+
+        req.flash("infoSubmit", "Article Published!");
+        res.redirect("/submit/articles/public"); 
+    } catch (error) {
+        // res.json(error);
+        req.flash("infoErrors", error);
+        res.redirect("/submit/articles/public");
+        
+    }
+
+
 }

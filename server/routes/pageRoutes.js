@@ -10,6 +10,8 @@ router.get("/categories/all", pageController.allCategories);
 router.get("/categories/:id", pageController.categoryPage);
 
 router.post("/search", pageController.searchArticle);
+router.get("/submit/articles/public", pageController.submitArticlePublic);
+router.post("/submit/articles/public", pageController.submitArticlePublicPOST);
 
 
 
