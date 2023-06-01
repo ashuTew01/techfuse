@@ -25,7 +25,7 @@
 
     <% if(typeof categories !== "undefined" && categories.length > 0) { %>
         <% categories.forEach(function(category, index) { %>
-            <a href="categories/<%= category.name %>" class="col text-center category__link">
+            <a href="categories/<%= category._id %>" class="col text-center category__link">
                 <div class="category__img shadow">
                     <img src="img/<%= category.image %>" alt="<%- category.name %>" loading="lazy">
                 </div>
@@ -98,7 +98,7 @@
         <section class="pb-4 pt-4">
             <div class="d-flex mb-2 align-items-center">
                 <h2><%= catArticles[0].catName%> Articles</h2>
-                <a href="/articles/<%= catArticles[0].catName%>" class="ms-auto">View More</a>
+                <a href="/categories/<%= catArticles[0].categoryID%>" class="ms-auto">View More</a>    
             </div>
 
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
@@ -120,7 +120,7 @@
 
                     <% }) %>
                 <% } %>
-            <!-- </div> -->
+            <!-- </div> -->  <!--  there is an unknown problem, including this div takes everything including this loop and below it, out of the container. -->
         </section>
     <% } %>
 <% }) %>

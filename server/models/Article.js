@@ -20,11 +20,13 @@ const articleSchema = new mongoose.Schema({
         required: "This is a required field"
     },
     catName: {
-        type: String
+        type: String,
+        maxLength: 30
     },
     title: {
         type: String,
-        required: "This is a required field"
+        required: "This is a required field",
+        maxLength: 120
     },
     content: {
         type: String,

@@ -1,0 +1,38 @@
+<%  if(article != null){ %>
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/articles/explore">Articles</a></li>
+            <li class="breadcrumb-item"><a href="/categories/<%= article.categoryID %>"><%=article.catName %></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%= truncatedTitle.substring(0, 30) + "..." %></li>
+        </ol>
+    </nav>
+
+    <div class="row">
+
+        <div class="col-12 col-md-4">
+            <img src="/uploads/<%= article.image %>" alt="<%= article.truncatedTitle %>" style="top: 20px;" class="img-fluid sticky-top" loading="lazy">
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12"><h1><%= article.title%></h1></div>
+                <div>
+                    <p class="lead" style="font-size: 15px; margin-bottom: 2px; margin-top: 1px; color: rgb(83, 83, 83);"><%= " " + formattedDate %></p>
+                    <i class="bi bi-tag lead col" style="font-size: 15px; color: rgb(83, 83, 83);"> <%= article.catName %></i>
+                </div>
+                <!-- <div class="col-12" style="white-space: pre-line;"> -->
+                    
+                    <div class="col-12 lead" style="white-space: pre-line;">
+                    <%= article.content %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<%  } else { %>
+    <p>No Item Found.</p>
+<% } %>
