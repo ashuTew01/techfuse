@@ -1,14 +1,21 @@
 const { ObjectId } = require("mongodb");
 const mongoose = require("mongoose");
+// const pathTest = require("../../")
 
 const articleSchema = new mongoose.Schema({
-    uploadedBy: {
+    type: {
         type: String,
         enum: ['Public', 'Moderator'],
         default: 'Public', // Optional: Set a default value if needed
         required: "This is a required field"
     },
-    category: {
+    uploadedBy: {
+        type: ObjectId   //User ID 
+    },
+    image: {
+        type: String    //Contains the Image Path.
+    },
+    categoryID: {
         type: ObjectId,
         required: "This is a required field"
     },
