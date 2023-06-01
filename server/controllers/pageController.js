@@ -30,14 +30,27 @@ exports.homepage = async(req, res) => {
     }
 }
 
-// GET "/categories"
+// GET "/categories/all"
 //Categories
-exports.exploreCategories = async(req, res) => {
+exports.allCategories = async(req, res) => {
     try {
         const limNum = 50;
         const categories = await Category.find({}).limit(limNum);
 
         res.render("categories", { title: "TechFuse - All Categories", categories });
+    } catch (error) {
+        res.status(500).send({message: error.message || "Error Occured"});
+    }
+}
+
+//GET "/articles/all"
+//Category Page
+exports.allArticles = async(req, res) => {
+    try {
+        const limNum = 30;
+        const articles = await Article.find({}).sort({ time: -1 }).limit(limNum);
+
+        res.render("allArticles", { title: "TechFuse - All Articles", articles});
     } catch (error) {
         res.status(500).send({message: error.message || "Error Occured"});
     }
@@ -80,5 +93,21 @@ exports.categoryPage = async(req, res) => {
         res.render("categoryPage", { title: "TechFuse - " + currCat.name, currCat, catArticles});
     } catch (error) {
         console.log(error);
+    }
+}
+
+
+
+//POST "/search"
+//Search
+exports.searchArticle = async(req, res) => {
+    try {
+        let searchTerm = req.body.searchTerm;
+        let results = await Article.find({ $text: { $search: searchTerm, $diacriticSensitive: true } } );
+        // res.json(results);
+        res.render("search", {title: "TechFuse - Search", results});
+        
+    } catch (error) {
+        res.status(500).send({message: error.message || "Error Occured."});
     }
 }

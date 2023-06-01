@@ -38,4 +38,10 @@ const articleSchema = new mongoose.Schema({
     }
 });
 
+articleSchema.index({title: "text", content: "text"});
+
+//Wildcard Indexing
+// articleSchema.index({"$**" : "text"});
+
+
 module.exports = mongoose.model('Article', articleSchema);
