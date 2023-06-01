@@ -19,6 +19,9 @@ const articleSchema = new mongoose.Schema({
         type: ObjectId,
         required: "This is a required field"
     },
+    catName: {
+        type: String
+    },
     title: {
         type: String,
         required: "This is a required field"

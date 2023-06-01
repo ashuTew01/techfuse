@@ -55,9 +55,9 @@
 
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
 
-        <% if(typeof allArticles.latestArticles !== "undefined" && allArticles.latestArticles.length > 0) { %>
+        <% if(typeof allArticles[0] !== "undefined" && allArticles[0].length > 0) { %>
 
-            <% allArticles.latestArticles.forEach(function(article, index) { %>
+            <% allArticles[0].forEach(function(article, index) { %>
 
                 <%  const MAX_TITLE_LENGTH = 50; // Define the maximum length you want to truncate to   %>
                 <%  let truncatedTitle = article.title;                                                 %>
@@ -82,8 +82,50 @@
 </section>
 
 
+
+
+
+
 <!-- latest end -->
 
+
+<!-- category-wise-articles-max-3  START -->
+
+<% allArticles.forEach((catArticles, index) => { %>
+    <% if(index == 0)  { return;} %>
+    <% if(typeof allArticles !== "undefined" && allArticles.length > 0) { %>
+        <% if(typeof catArticles !== "undefined" && catArticles.length > 0) { %>
+        <section class="pb-4 pt-4">
+            <div class="d-flex mb-2 align-items-center">
+                <h2><%= catArticles[0].catName%> Articles</h2>
+                <a href="/articles/<%= catArticles[0].catName%>" class="ms-auto">View More</a>
+            </div>
+
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+                    <% catArticles.forEach(function(article, index) { %>
+
+                        <%  const MAX_TITLE_LENGTH = 50;                                                        %>
+                        <%  let truncatedTitle = article.title;                                                 %>
+                        <%  if (truncatedTitle.length > MAX_TITLE_LENGTH) {                                     %>
+                        <%      truncatedTitle = truncatedTitle.substring(0, MAX_TITLE_LENGTH).trim() + '...';  %>
+                        <%  }                                                                                   %>
+
+                        <a href="/articles/<%= article._id %>" class="col text-center category__link">
+                            <div class="category__img category__img--large shadow">
+                                <img src="uploads/<%= article.image %>" alt="<%= truncatedTitle %>" loading="lazy">
+                            </div>
+                            <div class="pt-1"><%= truncatedTitle %></div>
+                        </a>
+
+                    <% }) %>
+                <% } %>
+            <!-- </div> -->
+        </section>
+    <% } %>
+<% }) %>
+
+<!-- category-wise-articles-max-3  END -->
 
 <!-- submit start -->
 
