@@ -1,0 +1,177 @@
+<style>
+    p{
+        font-size: 21px;
+    }
+    .hero {
+      background-color: #f8f8f8;
+      padding: 80px 0;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+  
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 0;
+      color: #666;
+    }
+  
+    .content {
+      padding: 60px 0;
+      text-align: center;
+    }
+  
+    .content h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+  
+    .content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #666;
+    }
+  
+    .content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+  
+    .content ul li {
+      margin-bottom: 10px;
+    }
+  
+    .image-gallery {
+      background-color: #f8f8f8;
+      padding: 40px 0;
+      text-align: center;
+    }
+  
+    .image-gallery h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+  
+    .image-gallery p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #666;
+    }
+  
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+  
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  
+    .mission-cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+  
+    .mission-card {
+      width: 400px;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .mission-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    .mission-card h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+  
+    .mission-card p {
+      font-size: 21px;
+      color: #666;
+    }
+  </style>
+  
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1 style="font-size: 55px;">About Us</h1>
+        <p class="lead" style="font-size: 21px;">At TechFuse, we are passionate about technology and gadgets. Our mission is to provide the latest news, articles, and insights into the world of technology. Whether you're a tech enthusiast, a gadget lover, or simply curious about the latest trends, we've got you covered.
+
+            <br>With a team of dedicated writers and experts, we strive to deliver high-quality content that is informative, engaging, and relevant. From in-depth product reviews to industry updates, we aim to be your go-to source for all things tech.</p>
+      </div>
+    </section>
+      
+    <section class="image-gallery">
+        <div class="container">
+          <h2 style="font-size: 45px;">Explore the World of Tech and AI</h2>
+          <p style="font-size: 21px;" class="lead">Take a visual tour through the fascinating world of technology and artificial intelligence. Discover the latest gadgets, innovative devices, and breakthrough technologies that are shaping our future.</p>
+          <div class="gallery">
+            <img src="img/about-01.jpg" alt="">
+            <img src="img/about-02.jpg" alt="">
+            <img src="img/about-03.jpg" alt="">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="content">
+      <div class="container">
+        <h2 style="font-size: 45px;">Our Mission</h2>
+        <div class="row mission-cards justify-content-center">
+          <div class="col-md-4">
+            <div class="mission-card">
+              <h3>Inspire Innovation</h3>
+              <p class="lead">We strive to inspire innovation by providing cutting-edge insights, thought-provoking articles, and in-depth analysis of emerging technologies.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mission-card">
+              <h3>Empower Knowledge</h3>
+              <p class="lead">Our mission is to empower knowledge by delivering accurate, reliable, and easy-to-understand information about tech and AI advancements.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mission-card">
+              <h3>Connect Communities</h3>
+              <p class="lead">We aim to connect communities of tech enthusiasts, AI professionals, and curious individuals to foster collaboration and collective growth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  

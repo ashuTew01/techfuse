@@ -14,5 +14,10 @@ router.get("/submit/articles/public", pageController.submitArticlePublic);
 router.post("/submit/articles/public", pageController.submitArticlePublicPOST);
 
 
+router.get("/about", pageController.aboutPage);
+router.get("/contact", pageController.contactPage);
+
+
+
 
 module.exports = router;

@@ -164,3 +164,15 @@ exports.submitArticlePublicPOST = async(req, res) => {
 
 
 }
+
+//GET "/about"
+//About page
+exports.aboutPage = async(req, res) => {
+    res.render("about", {title: "About TechFuse"});
+}
+
+//GET "/contact"
+//Contact Page (Not fully made just a coming soon page.)
+exports.contactPage = async(req, res) => {
+    res.render("contact", {title: "Contact"});
+}
