@@ -1,2 +1,2 @@
 # techfuse
-A tech &amp; AI news blog project built using HTML, CSS, Javascript, Node.js, Express and MongoDB
+A Tech & AI Articles Website (Project) built using Node.js, Express and MongoDB in the back-end. In the front-end EJS, CSS and Javascript were used.
