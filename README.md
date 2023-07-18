@@ -7,7 +7,7 @@ TechFuse is a completely dynamic technology articles website that allows users t
 
 ## Project Description
 
-TechFuse is a platform that hosts a wide range of technology articles. Users can browse articles by category, submit their own articles with images, and engage with the content through comments and likes.
+TechFuse is a platform that hosts a wide range of technology articles. Users can browse articles by category, submit their own articles with images, and engage with the content.
 
 ## Technologies Used
 
@@ -22,7 +22,6 @@ TechFuse is a platform that hosts a wide range of technology articles. Users can
 
 - Browse articles by category to easily find articles of interest.
 - Submit technology articles with images to share knowledge with the community.
-- Interact with the content through comments and likes for engagement.
 - Utilization of MongoDB for efficient data storage and retrieval based on categories.
 
 ## Status
